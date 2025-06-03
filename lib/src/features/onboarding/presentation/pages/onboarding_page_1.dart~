@@ -1,6 +1,5 @@
 import 'package:cinema_app/src/core/theme/app_colors.dart';
 import 'package:cinema_app/src/core/theme/app_images.dart';
-import 'package:cinema_app/src/features/onboarding/presentation/pages/onboarding_page_2.dart';
 import 'package:cinema_app/src/features/onboarding/presentation/widgets/onboarding_image_builder.dart';
 import 'package:cinema_app/src/shared_widgets/app_button.dart';
 import 'package:flutter/material.dart';
@@ -71,8 +70,8 @@ class OnboardingPage1 extends StatelessWidget {
               ),
               SizedBox(width: 10),
               Expanded(
-                flex: 3,
                 child: OnboardingImageBuilder(img: AppImages.image4),
+                flex: 3,
               ),
             ],
           ),
@@ -80,30 +79,19 @@ class OnboardingPage1 extends StatelessWidget {
             height: 98,
           ),
           Align(
-            alignment: Alignment.center,
             child: Text(
               "Tell us about your \nfavorite movie genres",
               textAlign: TextAlign.center,
-              style: TextStyle(
-                color: AppColors.whiteColor,
-                fontSize: 20,
-              ),
+              style: TextStyle(color: AppColors.whiteColor, fontSize: 20),
             ),
+            alignment: Alignment.center,
           ),
           SizedBox(
             height: 54,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 26),
-            child: TextButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => OnboardingPage2(),
-                      ));
-                },
-                child: Text('Next')),
+            child: AppButton(text: "Next"),
           ),
           SizedBox(
             height: 21,
@@ -114,10 +102,7 @@ class OnboardingPage1 extends StatelessWidget {
               Container(
                 height: 4,
                 width: 52,
-                decoration: BoxDecoration(
-                  color: AppColors.mainColor,
-                  borderRadius: BorderRadius.circular(2),
-                ),
+                decoration: BoxDecoration(color: AppColors.mainColor, borderRadius: BorderRadius.circular(2)),
               ),
               SizedBox(
                 width: 5,
@@ -125,10 +110,7 @@ class OnboardingPage1 extends StatelessWidget {
               Container(
                 height: 4,
                 width: 52,
-                decoration: BoxDecoration(
-                  color: AppColors.nextIndicatorColor,
-                  borderRadius: BorderRadius.circular(2),
-                ),
+                decoration: BoxDecoration(color: AppColors.nextIndicatorColor, borderRadius: BorderRadius.circular(2)),
               ),
             ],
           )
