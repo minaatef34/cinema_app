@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
 
-class SkipButton extends StatelessWidget {
-  SkipButton({super.key, this.onPressed});
+import '../core/theme/app_colors.dart';
 
-  VoidCallback? onPressed;
+class SkipButton extends StatelessWidget {
+  const SkipButton({super.key, this.onPressed});
+
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: Alignment.topRight,
-      child: TextButton(
-        onPressed: onPressed,
+      alignment: AlignmentDirectional.topEnd,
+      child: GestureDetector(
+        onTap: onPressed,
         child: Text(
           "Skip",
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(
+            color: AppColors.semiWhiteColor,
+            fontSize: 16,
+          ),
         ),
       ),
     );
