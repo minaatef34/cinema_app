@@ -1,4 +1,4 @@
-import 'package:cinema_app/src/features/onboarding/presentation/pages/onboarding_page_1.dart';
+import 'package:cinema_app/src/features/onboarding/presentation/pages/onboarding_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -13,6 +13,6 @@ class SplashManager extends ChangeNotifier {
   }
 
   void _navigateToNextPage(BuildContext context) {
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => OnboardingPage1()));
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => OnboardingPage()));
   }
 }
