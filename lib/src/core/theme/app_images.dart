@@ -8,4 +8,8 @@ class AppImages{
   static String image6 = "assets/images/image6.png";
   static String image7 = "assets/images/image7.png";
   static String image8 = "assets/images/image8.png";
+  static String homeBanar = "assets/images/home_banar.png";
+  static String mov1 = "assets/images/mov1.png";
+  static String mov2 = "assets/images/mov2.png";
+  static String mov3 = "assets/images/mov3.png";
 }

@@ -1,5 +1,6 @@
 import 'package:cinema_app/src/core/services/package_info/package_info_service_impl.dart';
 import 'package:cinema_app/src/core/theme/app_theme.dart';
+import 'package:cinema_app/src/features/home/presentation/pages/home_page.dart';
 import 'package:cinema_app/src/features/splash/presentation/pages/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
       title: 'Cinema APP',
       theme: AppTheme.appTheme,
       themeMode: ThemeMode.dark,
-      home: SplashPage(),
+      home: HomePage(),
     );
   }
 }
