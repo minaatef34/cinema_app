@@ -23,7 +23,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      obscureText: widget.isPasswordField ? !isPassword : false,
+      obscureText: widget.isPasswordField ? isPassword : false,
       style: TextStyle(color: AppColors.whiteColor),
       decoration: InputDecoration(
         hintText: widget.hint,
@@ -34,7 +34,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         suffixIcon: widget.isPasswordField
             ? IconButton(
                 icon: Icon(
-                  isPassword ? Icons.visibility : Icons.visibility_off,
+                  isPassword ? Icons.visibility_off : Icons.visibility,
                   color: AppColors.semiWhiteColor,
                 ),
                 onPressed: togglePasswordVisibility,
