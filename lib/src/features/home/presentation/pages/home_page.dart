@@ -17,33 +17,29 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(
-                height: kToolbarHeight,
+        child: Column(
+          children: [
+            SizedBox(height: kToolbarHeight),
+            HomeAppBar(),
+            SizedBox(height: 22),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    HomeBanar(),
+                    SizedBox(height: 80),
+                    HomeRecommendedSection(),
+                    SizedBox(height: 10),
+                  ],
+                ),
               ),
-              HomeAppBar(),
-              SizedBox(
-                height: 22,
-              ),
-              HomeBanar(),
-              SizedBox(
-                height: 80,
-              ),
-              HomeRecommendedSection(),
-              SizedBox(
-                height: 10,
-              )
-            ],
-          ),
+            )
+          ],
         ),
       ),
       floatingActionButton: Container(
