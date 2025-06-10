@@ -18,42 +18,46 @@ class SignUp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.blackColor,
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(24),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16),
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: kToolbarHeight),
               SkipButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Home(),
-                    ),
-                  );
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Home(),
+                      ),
+                      (_) => false);
                 },
               ),
-              SizedBox(height: 40),
-              Text("Sign Up", style: TextStyle(color: AppColors.whiteColor, fontSize: 22)),
-              SizedBox(height: 20),
+              SizedBox(height: 69),
+              Text("Sign Up",
+                  style: TextStyle(color: AppColors.whiteColor, fontSize: 22)),
+              SizedBox(height: 23),
               CustomTextField(hint: "E-mail"),
-              SizedBox(height: 15),
+              SizedBox(height: 14),
               CustomTextField(hint: "Password", isPasswordField: true),
-              SizedBox(height: 10),
+              SizedBox(height: 12),
               Text.rich(
                 TextSpan(
-                  text: "By clicking the “sign up” button, you accept the terms of the  ",
-                  style: TextStyle(color: AppColors.whiteColor),
+                  text:
+                      "By clicking the “sign up” button, you accept the terms of the  ",
+                  style: TextStyle(color: AppColors.semiDardGrey, fontSize: 12),
                   children: [
                     TextSpan(
                       text: "Privacy Policy",
-                      style: TextStyle(color: AppColors.mainColor),
+                      style:
+                          TextStyle(color: AppColors.whiteColor, fontSize: 12),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 28),
               AppButton(
                 text: "Sign Up",
                 onTap: () {
@@ -65,11 +69,11 @@ class SignUp extends StatelessWidget {
                   );
                 },
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 28),
               OrDivider(),
-              SizedBox(height: 20),
+              SizedBox(height: 40),
               SocialRow(),
-              Spacer(),
+              SizedBox(height: 206),
               Center(
                 child: Text.rich(
                   TextSpan(
@@ -90,7 +94,8 @@ class SignUp extends StatelessWidget {
                     ],
                   ),
                 ),
-              )
+              ),
+              SizedBox(height: 47),
             ],
           ),
         ),

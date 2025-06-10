@@ -10,4 +10,5 @@ class AppColors {
  static Color greyColor = Color(0xff575757);
  static Color nextIndicatorColor = Color(0xff1E1E1E);
  static Color dividerColor = Color(0xff404040);
+ static Color semiDardGrey = Color(0xff979797);
 }

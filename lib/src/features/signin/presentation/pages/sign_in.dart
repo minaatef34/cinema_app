@@ -16,55 +16,60 @@ class SignIn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.blackColor,
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.all(24),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16),
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: kToolbarHeight),
               SkipButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Home(),
-                    ),
-                  );
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Home(),
+                      ),
+                      (_) => false);
                 },
               ),
-              SizedBox(height: 40),
-              Text("Sign In", style: TextStyle(color: AppColors.whiteColor, fontSize: 22)),
-              SizedBox(height: 20),
+              SizedBox(height: 69),
+              Text("Sign In",
+                  style: TextStyle(color: AppColors.whiteColor, fontSize: 22)),
+              SizedBox(height: 23),
               CustomTextField(hint: "E-mail"),
-              SizedBox(height: 15),
+              SizedBox(height: 14),
               CustomTextField(hint: "Password", isPasswordField: true),
-              SizedBox(height: 10),
+              SizedBox(height: 14),
               Align(
                 alignment: Alignment.centerRight,
-                child: Text("Forgot password?", style: TextStyle(color: AppColors.whiteColor)),
+                child: Text("Forgot password?",
+                    style: TextStyle(color: AppColors.whiteColor)),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 28),
               AppButton(
                 text: "Sign In",
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Home(),
-                    ),
-                  );
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Home(),
+                      ),
+                      (_) => false);
                 },
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 28),
               OrDivider(),
-              SizedBox(height: 20),
+              SizedBox(height: 40),
               SocialRow(),
-              Spacer(),
+              SizedBox(
+                height: 206,
+              ),
               Center(
                 child: Text.rich(
                   TextSpan(
                     text: "Don’t you have an account? ",
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: AppColors.whiteColor),
                     children: [
                       TextSpan(
                         recognizer: TapGestureRecognizer()
@@ -80,7 +85,8 @@ class SignIn extends StatelessWidget {
                     ],
                   ),
                 ),
-              )
+              ),
+              SizedBox(height: 47),
             ],
           ),
         ),

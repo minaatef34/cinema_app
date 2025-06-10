@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 
 class AppButton extends StatelessWidget {
   const AppButton({super.key, required this.text, this.onTap});
+
   final String text;
   final GestureTapCallback? onTap;
+  
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -19,7 +21,10 @@ class AppButton extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-            style: TextStyle(color: AppColors.whiteColor, fontSize: 18, fontWeight: FontWeight.w600),
+            style: TextStyle(
+                color: AppColors.whiteColor,
+                fontSize: 18,
+                fontWeight: FontWeight.w600),
           ),
         ),
       ),

@@ -11,39 +11,41 @@ class SignupSuccess extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.blackColor,
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(24),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 26),
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 152),
               Text(
                 "Sign up successfully!",
                 style: TextStyle(color: AppColors.whiteColor, fontSize: 24),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 9),
               Text(
                 "Tell us more about you",
-                style: TextStyle(color: AppColors.semiWhiteColor),
+                style: TextStyle(color: AppColors.greyColor),
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 20),
               CustomTextField(hint: "Your name"),
-              SizedBox(height: 15),
+              SizedBox(height: 9),
               CustomTextField(hint: "Your phone number"),
-              SizedBox(height: 15),
+              SizedBox(height: 9),
               CustomTextField(hint: "Current City/pin-code"),
-              Spacer(),
+              SizedBox(height: 300),
               AppButton(
                 text: "Continue",
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Home(),
-                    ),
-                  );
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Home(),
+                      ),
+                      (_) => false);
                 },
               ),
+              SizedBox(height: 51),
             ],
           ),
         ),
