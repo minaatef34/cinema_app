@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeRecommendedSection extends StatefulWidget {
-  HomeRecommendedSection({super.key});
+  const HomeRecommendedSection({super.key});
 
   @override
   State<HomeRecommendedSection> createState() => _HomeRecommendedSectionState();
@@ -43,7 +43,7 @@ class _HomeRecommendedSectionState extends State<HomeRecommendedSection> {
           height: 15,
         ),
         Container(
-          height: 250,
+          height: 252,
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(39)),
           child: ListView.separated(
               itemBuilder: (_, index) {

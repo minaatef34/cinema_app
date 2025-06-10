@@ -1,5 +1,5 @@
 import 'package:cinema_app/src/core/theme/app_colors.dart';
-import 'package:cinema_app/src/features/home/presentation/pages/home.dart';
+import 'package:cinema_app/src/features/home/presentation/pages/home_page.dart';
 import 'package:cinema_app/src/shared_widgets/app_button.dart';
 import 'package:flutter/material.dart';
 import '../../../../shared_widgets/custom_text_filed.dart';
@@ -40,7 +40,7 @@ class SignupSuccess extends StatelessWidget {
                   Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Home(),
+                        builder: (context) => HomePage(),
                       ),
                       (_) => false);
                 },

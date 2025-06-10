@@ -1,5 +1,5 @@
 import 'package:cinema_app/src/core/theme/app_colors.dart';
-import 'package:cinema_app/src/features/home/presentation/pages/home.dart';
+import 'package:cinema_app/src/features/home/presentation/pages/home_page.dart';
 import 'package:cinema_app/src/features/sign_up/presentation/pages/sign_up.dart';
 import 'package:cinema_app/src/shared_widgets/app_button.dart';
 import 'package:cinema_app/src/shared_widgets/skip_button.dart';
@@ -28,7 +28,7 @@ class SignIn extends StatelessWidget {
                   Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Home(),
+                        builder: (context) => HomePage(),
                       ),
                       (_) => false);
                 },
@@ -53,7 +53,7 @@ class SignIn extends StatelessWidget {
                   Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Home(),
+                        builder: (context) => HomePage(),
                       ),
                       (_) => false);
                 },
