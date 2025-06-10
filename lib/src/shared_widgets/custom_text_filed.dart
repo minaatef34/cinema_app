@@ -1,23 +1,45 @@
+import 'package:cinema_app/src/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
-class CustomTextField extends StatelessWidget {
+class CustomTextField extends StatefulWidget {
   final String hint;
-  final bool isPassword;
+  final bool isPasswordField;
 
-  const CustomTextField({super.key, required this.hint, this.isPassword = false});
+  const CustomTextField({super.key, required this.hint, this.isPasswordField = false});
+
+  @override
+  _CustomTextFieldState createState() => _CustomTextFieldState();
+}
+
+class _CustomTextFieldState extends State<CustomTextField> {
+  bool isPassword = true;
+
+  void togglePasswordVisibility() {
+    setState(() {
+      isPassword = !isPassword;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-      obscureText: isPassword,
-      style: TextStyle(color: Colors.white),
+      obscureText: widget.isPasswordField ? !isPassword : false,
+      style: TextStyle(color: AppColors.whiteColor),
       decoration: InputDecoration(
-        hintText: hint,
-        hintStyle: TextStyle(color: Colors.white70),
+        hintText: widget.hint,
+        hintStyle: TextStyle(color: AppColors.semiWhiteColor),
         filled: true,
-        fillColor: Colors.black54,
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-        suffixIcon: isPassword ? Icon(Icons.visibility_off, color: Colors.white70) : null,
+        fillColor: AppColors.blackColor,
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(18)),
+        suffixIcon: widget.isPasswordField
+            ? IconButton(
+                icon: Icon(
+                  isPassword ? Icons.visibility : Icons.visibility_off,
+                  color: AppColors.semiWhiteColor,
+                ),
+                onPressed: togglePasswordVisibility,
+              )
+            : null,
       ),
     );
   }

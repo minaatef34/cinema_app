@@ -9,4 +9,5 @@ class AppColors {
  static Color mainColorDark = Color(0xff94232B);
  static Color greyColor = Color(0xff575757);
  static Color nextIndicatorColor = Color(0xff1E1E1E);
+ static Color dividerColor = Color(0xff404040);
 }

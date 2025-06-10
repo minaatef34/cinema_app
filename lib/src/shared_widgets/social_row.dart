@@ -1,3 +1,4 @@
+import 'package:cinema_app/src/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class SocialRow extends StatelessWidget {
@@ -16,9 +17,18 @@ class SocialRow extends StatelessWidget {
   }
 
   Widget _socialIcon(IconData icon) {
-    return CircleAvatar(
-      backgroundColor: Colors.white10,
-      child: Icon(icon, color: Colors.white),
+    return Container(
+      height: 53,
+      width: 95,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        color: AppColors.nextIndicatorColor,
+      ),
+      child: Icon(
+        icon,
+        color: AppColors.whiteColor,
+        size: 20,
+      ),
     );
   }
 }
