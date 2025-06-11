@@ -1,5 +1,6 @@
 import 'package:cinema_app/src/core/theme/app_svg_images.dart';
 import 'package:cinema_app/src/features/home/presentation/widgets/bottom_nav_item.dart';
+import 'package:cinema_app/src/features/profile/presentation/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 
 class HomeBottomNav extends StatefulWidget {
@@ -65,6 +66,7 @@ class _HomeBottomNavState extends State<HomeBottomNav> {
               onTap: () {
                 setState(() {
                   currentTap = 3;
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfilePage()));
                 });
               },
               child: BottomNavItem(

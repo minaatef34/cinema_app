@@ -12,4 +12,5 @@ class AppImages{
   static String mov1 = "assets/images/mov1.png";
   static String mov2 = "assets/images/mov2.png";
   static String mov3 = "assets/images/mov3.png";
+  static String profileImage = "assets/images/profile_image.png";
 }
