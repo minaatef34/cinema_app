@@ -2,7 +2,6 @@ import 'package:cinema_app/src/core/services/package_info/package_info_service_i
 import 'package:cinema_app/src/core/theme/app_colors.dart';
 import 'package:cinema_app/src/core/theme/app_images.dart';
 import 'package:cinema_app/src/features/signin/presentation/pages/sign_in.dart';
-import 'package:cinema_app/src/features/splash/presentation/manager/splash_manager.dart';
 import 'package:cinema_app/src/shared_widgets/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
