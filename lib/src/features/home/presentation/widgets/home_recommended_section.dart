@@ -1,6 +1,7 @@
 import 'package:cinema_app/src/core/theme/app_colors.dart';
 import 'package:cinema_app/src/core/theme/app_images.dart';
 import 'package:cinema_app/src/core/theme/app_svg_images.dart';
+import 'package:cinema_app/src/features/home/presentation/pages/movie_detailes.dart';
 import 'package:cinema_app/src/shared_widgets/movie_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -30,11 +31,17 @@ class _HomeRecommendedSectionState extends State<HomeRecommendedSection> {
             children: [
               Text(
                 "Recommended Movies",
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: AppColors.whiteColor),
+                style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w700,
+                    color: AppColors.whiteColor),
               ),
               Text(
                 "See All >",
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: AppColors.mainColor),
+                style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.mainColor),
               )
             ],
           ),
@@ -53,13 +60,23 @@ class _HomeRecommendedSectionState extends State<HomeRecommendedSection> {
                     Stack(
                       clipBehavior: Clip.none,
                       children: [
-                        SizedBox(
-                          height: 216,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(39),
-                            child: Image.asset(
-                              moviesDetails[index].image,
-                              fit: BoxFit.cover,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MovieDetailes(),
+                              ),
+                            );
+                          },
+                          child: SizedBox(
+                            height: 216,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(39),
+                              child: Image.asset(
+                                moviesDetails[index].image,
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         ),
@@ -71,20 +88,26 @@ class _HomeRecommendedSectionState extends State<HomeRecommendedSection> {
                             width: 40,
                             padding: EdgeInsets.all(8),
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(22), color: AppColors.nextIndicatorColor),
+                                borderRadius: BorderRadius.circular(22),
+                                color: AppColors.nextIndicatorColor),
                             child: Center(
                                 child: SvgPicture.asset(
-                                  AppSvgImages.playIcon,
-                                  height: 24,
-                                  width: 24,
-                                )),
+                              AppSvgImages.playIcon,
+                              height: 24,
+                              width: 24,
+                            )),
                           ),
                         ),
-
                       ],
                     ),
-                    SizedBox(height: 10,),
-                    Text(moviesDetails[index].name, style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500),)
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      moviesDetails[index].name,
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                    )
                   ],
                 );
               },

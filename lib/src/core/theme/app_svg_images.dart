@@ -11,4 +11,6 @@ class AppSvgImages {
   static String gmailIcon = "assets/svg/gmail_icon.svg";
   static String appleIcon = "assets/svg/apple_icon.svg";
   static String facebookIcon = "assets/svg/facebook_icon.svg";
+  static String arrowBack = "assets/svg/arrow_back.svg";
+  static String moreVert = "assets/svg/more_vert.svg";
 }
