@@ -5,7 +5,6 @@ import 'package:cinema_app/src/features/splash/presentation/manager/splash_manag
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class SplashPage extends ConsumerStatefulWidget {
   const SplashPage({super.key});
@@ -36,7 +35,7 @@ class _SplashPageState extends ConsumerState<SplashPage> {
           Spacer(),
           Text(
             "Version ${ref.watch(packageInfoServiceProvider).getCurrentVersion()}",
-            style: TextStyle(fontSize: 12, fontFamily: GoogleFonts.inter().fontFamily),
+            style: TextStyle(fontSize: 12,),
           ),
           SizedBox(height: 31),
         ],

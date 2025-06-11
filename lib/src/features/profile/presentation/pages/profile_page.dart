@@ -5,7 +5,6 @@ import 'package:cinema_app/src/features/signin/presentation/pages/sign_in.dart';
 import 'package:cinema_app/src/shared_widgets/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ProfilePage extends ConsumerStatefulWidget {
   const ProfilePage({super.key});
