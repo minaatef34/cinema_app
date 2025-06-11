@@ -1,8 +1,8 @@
 import 'package:cinema_app/src/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
-class TicketPage extends StatelessWidget {
-  const TicketPage({super.key});
+class PlayPage extends StatelessWidget {
+  const PlayPage({super.key});
 
   @override
   Widget build(BuildContext context) {
