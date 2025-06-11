@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       title: 'Cinema APP',
       theme: AppTheme.appTheme,
       themeMode: ThemeMode.dark,
-      home: HomePage(),
+      home: SplashPage(),
     );
   }
 }
