@@ -16,6 +16,7 @@ dependencies:
   package_info_plus: ^8.3.0
   flutter_riverpod: 2.6.1
   google_fonts: ^6.2.1
+  firebase_core:
 
 dev_dependencies:
   flutter_test:
