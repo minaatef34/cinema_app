@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "103297575015",
+    "project_id": "cinema-app-c1f7d",
+    "storage_bucket": "cinema-app-c1f7d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:103297575015:android:85db4d0ae491c55dac0cc2",
+        "android_client_info": {
+          "package_name": "com.doc.dev.cinema_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUc_vaQOGHUO-aff-kM8PvNOcTdkH1Rqo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
