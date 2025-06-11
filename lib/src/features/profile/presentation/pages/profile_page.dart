@@ -27,7 +27,8 @@ class _ProfilePageState extends ConsumerState<ProfilePage> {
             CircleAvatar(
               radius: 50,
               backgroundColor: AppColors.whiteColor,
-              child: Image.asset(AppImages.profileImage),
+              backgroundImage: AssetImage(AppImages.profileImage),
+
             ),
             SizedBox(
               height: 10,
@@ -57,15 +58,8 @@ class _ProfilePageState extends ConsumerState<ProfilePage> {
               ),
             ),
             SizedBox(
-              height: 5,
+              height: 20,
             ),
-            Text(
-              "Version ${ref.watch(packageInfoServiceProvider).getCurrentVersion()}",
-              style: TextStyle(fontSize: 12, fontFamily: GoogleFonts.inter().fontFamily),
-            ),
-            SizedBox(
-              height: 46,
-            )
           ],
         ),
       ),

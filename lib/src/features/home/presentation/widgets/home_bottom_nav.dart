@@ -1,20 +1,16 @@
 import 'package:cinema_app/src/core/theme/app_svg_images.dart';
+import 'package:cinema_app/src/features/home/presentation/manager/nav_bar_current_page_provider.dart';
 import 'package:cinema_app/src/features/home/presentation/widgets/bottom_nav_item.dart';
-import 'package:cinema_app/src/features/profile/presentation/pages/profile_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class HomeBottomNav extends StatefulWidget {
+class HomeBottomNav extends ConsumerWidget {
   const HomeBottomNav({super.key});
 
   @override
-  State<HomeBottomNav> createState() => _HomeBottomNavState();
-}
+  Widget build(BuildContext context, ref) {
+    final currentTap = ref.watch(navBarCurrentPageProvider);
 
-class _HomeBottomNavState extends State<HomeBottomNav> {
-  int currentTap = 0;
-
-  @override
-  Widget build(BuildContext context) {
     return Container(
       height: 82,
       width: double.infinity,
@@ -34,9 +30,7 @@ class _HomeBottomNavState extends State<HomeBottomNav> {
           children: [
             GestureDetector(
               onTap: () {
-                setState(() {
-                  currentTap = 0;
-                });
+                ref.watch(navBarCurrentPageProvider.notifier).state = 0;
               },
               child: BottomNavItem(
                 item: NavBarItem(AppSvgImages.navBottomIcon1, "Movies", 0, currentTap),
@@ -44,9 +38,7 @@ class _HomeBottomNavState extends State<HomeBottomNav> {
             ),
             GestureDetector(
               onTap: () {
-                setState(() {
-                  currentTap = 1;
-                });
+                ref.watch(navBarCurrentPageProvider.notifier).state = 1;
               },
               child: BottomNavItem(
                 item: NavBarItem(AppSvgImages.navBottomIcon2, "Play", 1, currentTap),
@@ -54,9 +46,7 @@ class _HomeBottomNavState extends State<HomeBottomNav> {
             ),
             GestureDetector(
               onTap: () {
-                setState(() {
-                  currentTap = 2;
-                });
+                ref.watch(navBarCurrentPageProvider.notifier).state = 2;
               },
               child: BottomNavItem(
                 item: NavBarItem(AppSvgImages.navBottomIcon3, "Ticket", 2, currentTap),
@@ -64,10 +54,7 @@ class _HomeBottomNavState extends State<HomeBottomNav> {
             ),
             GestureDetector(
               onTap: () {
-                setState(() {
-                  currentTap = 3;
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfilePage()));
-                });
+                ref.watch(navBarCurrentPageProvider.notifier).state = 3;
               },
               child: BottomNavItem(
                 item: NavBarItem(AppSvgImages.navBottomIcon4, "More", 3, currentTap),
