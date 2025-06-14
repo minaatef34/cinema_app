@@ -16,6 +16,9 @@ dependencies:
   package_info_plus: ^8.3.0
   flutter_riverpod: 2.6.1
   firebase_core:
+  dio:
+  page_transition:
+  pretty_dio_logger:
 
 dev_dependencies:
   flutter_test:
