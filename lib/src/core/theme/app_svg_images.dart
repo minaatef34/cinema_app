@@ -11,9 +11,6 @@ class AppSvgImages {
   static String navBottomIcon2 = "assets/svg/nav_bottom_icon2.svg";
   static String navBottomIcon3 = "assets/svg/nav_bottom_icon3.svg";
   static String navBottomIcon4 = "assets/svg/nav_bottom_icon4.svg";
-  static String gmailIcon = "assets/svg/gmail_icon.svg";
-  static String appleIcon = "assets/svg/apple_icon.svg";
-  static String facebookIcon = "assets/svg/facebook_icon.svg";
   static String arrowBack = "assets/svg/arrow_back.svg";
   static String moreVert = "assets/svg/more_vert.svg";
 }
