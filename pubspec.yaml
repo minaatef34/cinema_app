@@ -19,6 +19,7 @@ dependencies:
   dio:
   page_transition:
   pretty_dio_logger:
+  shared_preferences: 
 
 dev_dependencies:
   flutter_test:

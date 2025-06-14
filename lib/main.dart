@@ -1,4 +1,6 @@
 import 'package:cinema_app/firebase_options.dart';
+import 'package:cinema_app/src/core/services/cache/cache_service_impl.dart';
+import 'package:cinema_app/src/core/services/http/http_service_impl.dart';
 import 'package:cinema_app/src/core/services/package_info/package_info_service_impl.dart';
 import 'package:cinema_app/src/core/theme/app_theme.dart';
 import 'package:cinema_app/src/features/home/presentation/pages/home_page.dart';
@@ -14,7 +16,9 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await providerContainer.read(httpServiceProvider).init();
   await providerContainer.read(packageInfoServiceProvider).init();
+  await providerContainer.read(cacheServiceProvider).init();
 
   runApp(
     UncontrolledProviderScope(

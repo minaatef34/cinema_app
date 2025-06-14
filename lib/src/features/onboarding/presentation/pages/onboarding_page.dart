@@ -9,11 +9,24 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../shared_widgets/skip_button.dart';
 import '../../../signin/presentation/pages/sign_in.dart';
 
-class OnboardingPage extends ConsumerWidget {
+class OnboardingPage extends ConsumerStatefulWidget {
   const OnboardingPage({super.key});
 
   @override
-  Widget build(BuildContext context, ref) {
+  ConsumerState<OnboardingPage> createState() => _OnboardingPageState();
+}
+
+class _OnboardingPageState extends ConsumerState<OnboardingPage> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ref.watch(onboardingManagerProvider).getGenreMovieList();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final manager = ref.watch(onboardingManagerProvider);
     return PopScope(
       canPop: false,

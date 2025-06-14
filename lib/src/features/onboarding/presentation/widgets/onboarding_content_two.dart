@@ -12,31 +12,41 @@ class OnboardingContentTwo extends ConsumerWidget {
     return Column(
       children: [
         Spacer(),
-        Wrap(
-          spacing: 6,
-          runSpacing: 6,
-          alignment: WrapAlignment.center,
-          children: manager.genres.map((genre) {
-            final isSelected = manager.selectedGenres.contains(genre);
-            return GestureDetector(
-              onTap: () => manager.toggleGenre(genre),
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 14, vertical: 7),
-                decoration: BoxDecoration(
-                  color: isSelected ? AppColors.mainColor : AppColors.nextIndicatorColor,
-                  borderRadius: BorderRadius.circular(4),
-                ),
-                child: Text(
-                  genre,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500,
+        manager.isLoading
+            ? Center(child: CircularProgressIndicator())
+            : manager.genreMovieListResponse?.genres == null
+                ? Center(
+                    child: Text(
+                      "No Internet Connection ",
+                      style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
+                    ),
+                  )
+                : Wrap(
+                    spacing: 6,
+                    runSpacing: 6,
+                    alignment: WrapAlignment.center,
+                    children: manager.genreMovieListResponse?.genres?.map((genre) {
+                          final isSelected = manager.selectedGenres.contains(genre);
+                          return GestureDetector(
+                            onTap: () => manager.toggleGenre(genre),
+                            child: Container(
+                              padding: EdgeInsets.symmetric(horizontal: 14, vertical: 7),
+                              decoration: BoxDecoration(
+                                color: isSelected ? AppColors.mainColor : AppColors.nextIndicatorColor,
+                                borderRadius: BorderRadius.circular(4),
+                              ),
+                              child: Text(
+                                genre.name ?? '',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
+                          );
+                        }).toList() ??
+                        [],
                   ),
-                ),
-              ),
-            );
-          }).toList(),
-        ),
         Spacer(),
         Text(
           "Select the genres you like to watch",

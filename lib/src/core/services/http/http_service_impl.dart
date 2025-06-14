@@ -20,20 +20,28 @@ class HttpServiceImpl implements HttpService {
   }
 
   @override
-  Future<Response> get(String url, {Object? requestBody}) async {
-    Response response = await dio.get(
-      url,
-      data: requestBody,
-    );
-    return response;
+  Future<Response?> get(String url, {Object? requestBody}) async {
+    try {
+      Response response = await dio.get(
+        url,
+        data: requestBody,
+      );
+      return response;
+    } catch (e) {
+      return null;
+    }
   }
 
   @override
-  Future<Response> post(String url, Object? requestBody) async {
-    Response response = await dio.post(
-      url,
-      data: requestBody,
-    );
-    return response;
+  Future<Response?> post(String url, Object? requestBody) async {
+    try {
+      Response response = await dio.post(
+        url,
+        data: requestBody,
+      );
+      return response;
+    } catch (e) {
+      return null;
+    }
   }
 }
