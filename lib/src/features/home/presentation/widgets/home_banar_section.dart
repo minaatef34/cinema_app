@@ -1,15 +1,19 @@
+import 'package:cinema_app/src/core/base/api_routes.dart';
 import 'package:cinema_app/src/core/theme/app_colors.dart';
 import 'package:cinema_app/src/core/theme/app_images.dart';
 import 'package:cinema_app/src/core/theme/app_svg_images.dart';
+import 'package:cinema_app/src/features/home/presentation/manager/home_manager.dart';
 import 'package:cinema_app/src/features/home/presentation/pages/movie_detailes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class HomeBanar extends StatelessWidget {
+class HomeBanar extends ConsumerWidget {
   const HomeBanar({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
+    final homeManager = ref.watch(homeManagerProvider);
     return Stack(
       clipBehavior: Clip.none,
       children: [
@@ -20,16 +24,13 @@ class HomeBanar extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => MovieDetailes(),
                 ));
-        
           },
           child: Container(
             height: 280,
             width: double.infinity,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(48),
-                color: AppColors.whiteColor),
-            child: Image.asset(
-              AppImages.homeBanar,
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(48), color: AppColors.whiteColor),
+            child: Image.network(
+              ApiRoutes.imageUrl + (homeManager.homeResponses?.results?.first.backdropPath ?? ''),
               fit: BoxFit.fill,
             ),
           ),
@@ -48,11 +49,8 @@ class HomeBanar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Watch Trailer",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 12,
-                      color: AppColors.whiteColor),
+                  homeManager.homeResponses?.results?.first.title ?? '',
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 12, color: AppColors.whiteColor),
                 ),
                 SvgPicture.asset(AppSvgImages.playIcon)
               ],
@@ -64,9 +62,7 @@ class HomeBanar extends StatelessWidget {
           left: 10,
           right: 10,
           child: Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(48),
-                color: AppColors.nextIndicatorColor),
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(48), color: AppColors.nextIndicatorColor),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 13),
               child: Row(
@@ -78,50 +74,31 @@ class HomeBanar extends StatelessWidget {
                     children: [
                       Text(
                         "TRENDING",
-                        style: TextStyle(
-                            fontSize: 12,
-                            color: AppColors.whiteColor,
-                            fontWeight: FontWeight.w500),
+                        style: TextStyle(fontSize: 12, color: AppColors.whiteColor, fontWeight: FontWeight.w500),
                       ),
                       Text("EVIL DEAD RISE",
-                          style: TextStyle(
-                              fontSize: 16,
-                              color: AppColors.whiteColor,
-                              fontWeight: FontWeight.w600)),
+                          style: TextStyle(fontSize: 16, color: AppColors.whiteColor, fontWeight: FontWeight.w600)),
                       RichText(
                         text: TextSpan(children: [
                           TextSpan(
                               text: "A",
-                              style: TextStyle(
-                                  fontSize: 16,
-                                  color: AppColors.mainColor,
-                                  fontWeight: FontWeight.w600)),
+                              style: TextStyle(fontSize: 16, color: AppColors.mainColor, fontWeight: FontWeight.w600)),
                           TextSpan(
                               text: " . ",
-                              style: TextStyle(
-                                  fontSize: 14,
-                                  color: AppColors.whiteColor,
-                                  fontWeight: FontWeight.w500)),
+                              style: TextStyle(fontSize: 14, color: AppColors.whiteColor, fontWeight: FontWeight.w500)),
                           TextSpan(
                               text: "ENGLISH",
-                              style: TextStyle(
-                                  fontSize: 14,
-                                  color: AppColors.whiteColor,
-                                  fontWeight: FontWeight.w500)),
+                              style: TextStyle(fontSize: 14, color: AppColors.whiteColor, fontWeight: FontWeight.w500)),
                         ]),
                       ),
                       Text("HORHOR",
-                          style: TextStyle(
-                              fontSize: 14,
-                              color: AppColors.whiteColor,
-                              fontWeight: FontWeight.w500)),
+                          style: TextStyle(fontSize: 14, color: AppColors.whiteColor, fontWeight: FontWeight.w500)),
                     ],
                   ),
                   Column(
                     children: [
                       Container(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 17, vertical: 10),
+                        padding: EdgeInsets.symmetric(horizontal: 17, vertical: 10),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(30),
                             gradient: LinearGradient(colors: [
@@ -132,10 +109,7 @@ class HomeBanar extends StatelessWidget {
                         child: Center(
                           child: Text(
                             "Book",
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                color: AppColors.whiteColor),
+                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: AppColors.whiteColor),
                           ),
                         ),
                       ),
@@ -144,10 +118,7 @@ class HomeBanar extends StatelessWidget {
                       ),
                       Text(
                         "2D.3D.4DX",
-                        style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.whiteColor),
+                        style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: AppColors.whiteColor),
                       ),
                     ],
                   )
