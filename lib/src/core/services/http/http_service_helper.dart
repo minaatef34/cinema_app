@@ -39,6 +39,7 @@ class HttpServiceHelper with ChangeNotifier {
         var token = ApiRoutes.appT;
         options.headers.addAll({
           'Authorization': 'Bearer $token',
+          'api_key': ApiRoutes.appAK,
         });
       }
     } finally {
@@ -64,6 +65,4 @@ class HttpServiceHelper with ChangeNotifier {
       maxWidth: 140,
     );
   }
-
-
 }

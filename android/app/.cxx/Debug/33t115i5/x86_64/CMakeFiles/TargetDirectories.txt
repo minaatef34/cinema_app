@@ -1,0 +1,2 @@
+D:/Developer/David Projectes/cinema_app/android/app/.cxx/Debug/33t115i5/x86_64/CMakeFiles/edit_cache.dir
+D:/Developer/David Projectes/cinema_app/android/app/.cxx/Debug/33t115i5/x86_64/CMakeFiles/rebuild_cache.dir

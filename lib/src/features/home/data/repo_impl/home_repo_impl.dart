@@ -14,10 +14,21 @@ class HomeRepoImpl implements HomeRepo {
 
   @override
   Future<HomeResponses?> getData(List<int> genreId) async {
-    final result = await httpService.get('${ApiRoutes.movieList}?with_genres=$genreId');
+    final String url;
+
+    if (genreId.isNotEmpty) {
+      final joinedGenres = genreId.join(',');
+      url = '${ApiRoutes.movieList}?with_genres=$joinedGenres';
+    } else {
+      url = ApiRoutes.movieList;
+    }
+
+    final result = await httpService.get(url);
+
     if (result?.statusCode == 200) {
       return HomeResponses.fromJson(result?.data);
     }
+
     return null;
   }
 }

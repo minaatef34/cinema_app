@@ -24,7 +24,7 @@ class HttpServiceImpl implements HttpService {
     try {
       Response response = await dio.get(
         url,
-        data: requestBody,
+        queryParameters: requestBody as Map<String, dynamic>?,
       );
       return response;
     } catch (e) {
